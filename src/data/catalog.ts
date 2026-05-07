@@ -97,7 +97,6 @@ const seeds: ProductSeed[] = [
 ];
 
 function makeProduct(seed: ProductSeed, index: number): Product {
-	const category = categories.find((item) => item.slug === seed.categorySlug) ?? categories[0];
 	const palette = palettes[index % palettes.length];
 	const titleSlug = encodeURIComponent(seed.slug);
 

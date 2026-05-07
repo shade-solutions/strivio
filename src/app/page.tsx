@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Trophy, Zap } from "lucide-react";
 import { categories, goals } from "@/data/catalog";
-import { bestSellers, featuredProducts, newDrops, quickWins, staffPicks } from "@/lib/catalog";
+import { bestSellers, newDrops, quickWins, staffPicks } from "@/lib/catalog";
 import { siteConfig } from "@/config/site";
 import { ButtonLink } from "@/components/ui/button";
 import { Card, Section, SectionHeading } from "@/components/ui/card";

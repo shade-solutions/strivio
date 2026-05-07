@@ -19,11 +19,29 @@
 		"binding": "ASSETS",
 		"directory": ".open-next/assets"
 	},
+	"routes": [
+		{
+			"pattern": "strivio.world",
+			"custom_domain": true
+		}
+	],
 	"images": {
 		// Enable image optimization
 		// see https://opennext.js.org/cloudflare/howtos/image
 		"binding": "IMAGES"
 	},
+	"r2_buckets": [
+		// OpenNext incremental cache binding. Replace the bucket name after creating it in Cloudflare.
+		// {
+		// 	"binding": "NEXT_INC_CACHE_R2_BUCKET",
+		// 	"bucket_name": "strivio-next-cache"
+		// },
+		// Custom digital delivery fallback binding.
+		// {
+		// 	"binding": "STRIVIO_PRODUCT_FILES",
+		// 	"bucket_name": "strivio-product-files"
+		// }
+	],
 	"services": [
 		{
 			// Self-reference service binding, the service name must match the worker name
@@ -35,7 +53,12 @@
 	"observability": {
 		"enabled": true
 	},
-	"upload_source_maps": true
+	"upload_source_maps": true,
+	"vars": {
+		"NEXT_PUBLIC_APP_URL": "https://strivio.world",
+		"DODO_ENVIRONMENT": "test_mode",
+		"NEXT_PUBLIC_POSTHOG_HOST": "https://us.i.posthog.com"
+	}
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
