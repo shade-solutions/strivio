@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { Sparkles } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { ButtonLink } from "@/components/ui/button";
@@ -28,7 +29,9 @@ export function SiteHeader() {
 					<ButtonLink href="/explore" variant="outline" size="sm" className="hidden sm:inline-flex">
 						Explore products
 					</ButtonLink>
-					<UserMenu />
+					<Suspense fallback={<div className="h-10 w-24 animate-pulse rounded-2xl bg-[#E5E7E2]" />}>
+						<UserMenu />
+					</Suspense>
 				</div>
 			</div>
 		</header>
